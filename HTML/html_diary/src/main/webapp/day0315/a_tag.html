@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<strong>링크연습</strong><br/>
+URL 연결<a href = "http://localhost/html_prj/day0314/font.html" title = "URL 사용"> 글꼴연습</a><br/>
+URI 연결<a href = "font.html" title = "URI사용"> 글꼴연습</a><br/>
+<!-- a_tag.html과 같은 경로에서 파일을 찾는다.
+	http://localhost/html_prj/day0315/font.html  -->
+	
+URI 연결<a href = "day0314/font.html"> 글꼴연습</a><br/>
+<!-- a_tag.html과 하위 경로에서 파일을 찾는다.
+	http://localhost/html_prj/day0315/day0314/font.html  -->
+	
+URI 연결<a href = "../day0314/font.html"> 글꼴연습</a><br/>
+<!-- a_tag.html이 존재하는 상위경로에서 하위 경로에를 만들고 파일을 찾는다.
+	http://localhost/html_prj/day0314/font.html  -->
+	<br/>
+같은 경로의 파일 URL<a href = "http://localhost/html_prj/day0315/a_test.html">연결</a><br/>
+같은 경로의 파일 URI<a href = "a_test.html">연결</a>	
+
+<br/>
+<strong>다른 서버에 파일 연결</strong> <br/>
+<a href = "http://naver.com">네이버</a><br/>
+<a href = "https://news.v.daum.net/v/20220315111020848">다음</a><br/>
+<a href = "http://google.com">구글</a><br/>
+<a href = "http://sist.co.kr">쌍용</a><br/>
+
+<br/>
+<strong>최상위경로이동</strong><br/>
+<a href = "./">이동</a>
+</body>
+</html>

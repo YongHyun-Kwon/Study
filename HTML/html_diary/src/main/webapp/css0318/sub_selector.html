@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* sub selector : 특정상속관계의 태그에만 디자인 적용. */
+span { font-weight: bold; font-size: 20px; }
+</style>
+</head>
+<body>
+안녕하세요? <span>홍길동</span>님
+<div>
+오늘은 <span>금요일</span>입니다.
+</div>
+<p>
+내일은 <span>토요일</span>입니다.
+</p>
+<!-- p태그는 전체영역을 나누는 div를 가지지 못한다. : HTML은 Rendering하는 언어이므로
+     그려준다. -->
+<p>
+내일은 <div>비오는 <span>토요일</span>이</div> 예상됩니다.
+</p>
+</body>
+</html>

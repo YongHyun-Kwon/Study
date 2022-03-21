@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블 태그를 사용한 표만들기</title>
+</head>
+<body>
+<!--  첫번째 테이블 -->
+<table border = "1">
+<tr>
+	<th>번호</th><th>언어</th>
+</tr>
+<tr>
+	<td>1</td><td>자바</td>
+</tr>
+<tr>
+	<td>2</td><td>HTML</td>
+</tr>
+<tr>
+	<td>3</td><td>JavaScript</td>
+</tr>
+</table>
+<!-- 두번째 테이블 : 테이블 속성 ( 부모태그의 속성은 자식태그로 상속이 된다. ) -->
+<table border="1" width="400" height ="300" bgcolor = "#DAEAD6" bordercolor="#3D8892"
+>
+<tr>
+	<th>번호</th>
+	<th>언어</th>
+	<th>특징</th>
+</tr>
+<tr>
+	<td bgcolor="#82B277">1</td>
+	<td bgcolor="#82B277">강현모</td>
+	<td bgcolor="#82B277">kanghyunmo@test.com</td>
+</tr>
+<tr bgcolor ="#FFFADB">
+	<td>2</td>
+	<td>강산</td>
+	<td>kangsan@test.com</td>
+</tr>
+</table>
+<!-- 바닥에 그림 넣기 : 바둑판식의 배열 ( 이미지가 원래 배열로 반복되어 들어간다.) -->
+<table border="1" background="http://localhost/html_prj/common/images/naver_logo.png">
+<tr>
+	<th width="200">번호</th>
+	<th width="250">이름</th>
+</tr>
+<tr>
+	<td height="30" background="../common/images/google_logo.png">1<td>
+	<td>김진영</td>
+</tr>
+<tr height="40" background="../common/images/sist_logo.png"><!-- 높이는 tr에 설정하여 자식 td가 상속도록 설정한다. -->
+	<td>2</td>
+	<td>신유철</td>
+</tr>
+</table>
+<!-- 간격설정 : cellpadding="td내부의간격" cellspacing="td사이의 간격" -->
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{ margin : 10px }
+	/* 모든 선 변경 */
+	.all{ border :1px solid #000000} /* 선종류 : solid, dotted, dashed, double*/
+	.left{ border-left :2px solid #FF0000}
+	.top{ border-top :3px dotted #0000FF}
+	.right{ border-right :4px dashed #00FF00}
+	.bottom{ border-bottom :5px double #000000}
+
+	#all{ border-left: 1px solid #000000; border-top: 2px dahsed #FF0000;
+		  border-right: 1px dotted #0000FF; border-bottom: 1px solid yellow	} 
+	#bottom{border-left:none; border-top : none; border-right: none; border-bottom: 1px solid #000000}
+	
+	table { border-top: 1px solid #0000FF;border-bottom: 1px solid #0000FF}
+	
+	img { border-left: 1px solid #FF0000; border-right: 1px solid #FF0000}
+</style>
+</head>
+<body>
+<div class="all">모든선</div>
+<div class="left">왼쪽선</div>
+<div class="top">윗쪽선</div>
+<div class="right">오른쪽선</div>
+<div class="bottom">아랫쪽선</div>
+<div id= "all">
+왼쪽선은 1px 실선 검은색, 윗선은 2px 긴점선 빨간색,
+오른쪽선은 1px 짧은 점선 파란색, 아래쪽선은 1px 실선 노란색 
+</div>
+<!-- 아래 input의 왼쪽 위쪽 오른쪽 선은 보여주지 않고 아래쪽 선만 1px 실선 검은색으로 설정  -->
+<input type="text" name="name" id="bottom"/>
+
+<table>
+<tr>
+	<th>번호</th><th>이름</th>
+</tr>
+<tr>
+	<td>1</td><th>황성준</th>
+</tr>
+<tr>
+	<td>2</td><td>권용현</td>
+</tr>
+
+</table>
+<br/>
+<img src="../common/images/right.PNG"/>
+
+</body>
+</html>

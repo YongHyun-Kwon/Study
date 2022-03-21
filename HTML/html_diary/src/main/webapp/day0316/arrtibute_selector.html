@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* name selector, attribute selector */
+[type='text'] {border: 1px solid #0000FF }
+[name='cd_num3'] {border: 1px solid #FF0000 }
+[value='취소'] {border: 1px solid green}
+
+[name='age'], [type='button'] { border: 1px solid #82BCE1}
+</style>
+</head>
+<body>
+<form>
+<label>이름</label><input type="text" name="name"/><br/>
+<label>나이</label><input type="password" name="age"/><br/>
+<label>카드번호</label><input type="text" name="cd_num1"/>-<input type="text" name="ce_num2"/>-
+<input type="text" name="cd_num3"/>-<input type="text" name="ce_num4"/>
+<br/>
+<input type="checkbox" name="save_flag"/>카드번호 저장<br/>
+<input type="button" value="저장"/>
+<input type="reset" value="취소"/>
+
+</form>
+
+
+</body>
+</html>

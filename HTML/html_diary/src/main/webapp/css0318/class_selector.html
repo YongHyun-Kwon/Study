@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>calss selector 사용</title>
+<style type="text/css">
+/* 디자인을 여러 태그에서 사용할 때 class selector 정의
+   필요한 태그에서 class selector을 선언해야 디자인이 적용된다.	
+ */
+.use_border{ border:1px solid #dfdfdf; }
+
+.td_border, .div_border { border: 2px dotted #FF0000}
+</style>
+</head>
+<body>
+<table class="use_border" >
+<tr>
+	<th class="use_border">번호</th>
+</tr>
+<tr>
+	<td class="td_border">1</td>
+</tr>
+<tr>
+	<td class="td_border">2</td>
+</tr>
+<tr>
+	<td class="td_border">3</td>
+</tr>
+</table>
+<div class = "div_border">
+오늘은 금요일 입니다.
+</div>
+<table>
+<tr>
+	<th>이름</th>
+</tr>
+<tr>
+	<td>장정우</td>
+</tr>
+<tr>
+	<td>최연이</td>
+</tr>
+<tr>
+	<td>신유철</td>
+</tr>
+</table>
+<p class="use_border">
+내일은 퇼 입니다.
+</p>
+</body>
+</html>

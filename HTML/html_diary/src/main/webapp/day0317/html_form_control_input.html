@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML Form Control</title>
+</head>
+<body>
+<!-- <form> -->
+
+<label>기본텍스트 </label><input type="text"><br/>
+<label>크기변경</label><input type="text" size ="10"/>
+<label>readonly</label><input type="text" name = "read"size ="10" value="기본값" readonly="readonly"/>
+<!-- disabled는 값변경 불가, back-end로 값 전송되지 않는다. -->
+<label>disabled</label><input type="text" name = "dis" size ="10" value="기본값" disabled="disabled"/>
+
+<label>최대 입력 글자수</label><input type="text" size ="10" maxlength="15" value="기본값"/>
+
+<label>password</label><input type="password" name="pass" size="15" maxlength="10"/><br/>
+<label>password 기본값</label><input type="password" name="pass" size="15" maxlength="10"
+value="기본값"/><br/>
+
+<label>취미</label>
+<input type ="checkbox" name ="hobby" value="음악"/>음악감상<br/>
+<input type ="checkbox" name ="hobby" value="영화"/>영화감상<br/>
+<input type ="checkbox" name ="hobby" value="독서"/>독서<br/>
+<input type ="checkbox" name ="hobby" value="등산"/>등산<br/>
+
+<label>성별</label>
+<input type="radio" name="gender" value="남자" checked="checked"/>남
+<input type="radio" name="gender" value="여자"/>여<br/>
+
+<label>히든</label>
+<input type="hidden" name = "hid" value="보여지지않고 전송할 값"/>
+
+<label>파일</label>
+<input type="file" name="upfile"/><br/>
+
+<!-- form 태그 안에 정의 될 때만 정해진 일을 수행한다. -->
+<input type="button" value = "버튼"/> <!-- 기본 라벨이 존재하지 않는다. -->
+<input type="reset" value="초기화"/><!-- 기본 라벨 존재: 초기화 -->
+<input type="submit" value="전송"/> <!--  기본라벨 존재 : 전송 -->
+
+<!-- </form> -->
+</body>
+</html>

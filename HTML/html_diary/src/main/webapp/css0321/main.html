@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Work</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.135/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+  table {
+    width: 100%;
+    margin-top: 50px
+  }
+
+th { text-align: left;
+	 font-size : 20px;
+  	border-bottom: 3px solid #000000;
+	  }
+	  
+td {
+	margin-right: 20px
+ }
+ 
+[type=text], [type=password] {
+ width : 750px;
+ height: 50px;
+ margin-top: 5px;
+  }
+
+#loginBtn {
+ width : 750px;
+ height: 50px;
+ margin-top: 5px;
+ background-color: #000000;
+ color: white;
+ font-size : 18px;
+ font-family: 맑은 고딕;
+ font-weight: bold;
+}
+
+#searchBtn {
+ 	width : 750px;
+ 	height: 50px;
+ 	margin-top: 5px;
+	background-color: white;
+	border-color: white;
+	 font-size : 18px;
+ font-family: 맑은 고딕;
+ font-weight: bold;
+}
+
+a {
+	
+	font-size: 14px;
+	font-family: 맑은 고딕;
+	font-weight: bold;
+ }
+
+
+</style>
+</head>
+<body>
+
+<h1 style="text-align: center; margin-top: 50px; font-size: 40px;">로그인</h1>
+
+<div style="width: 750px; float:left; margin-left: 150px;">
+	<table id="tbl1">
+	<tr>	
+		<th>회원로그인</th>
+	</tr>
+	<tr>
+		<td><input type="text" placeholder="  아이디"></td>
+	</tr>
+	<tr>
+		<td><input type="password" placeholder="  비밀번호"></td>
+	</tr>
+	<tr>
+		<td><input type="submit" value="로그인" id="loginBtn"></td>
+	</tr>
+	</table>
+</div>
+
+
+<div style="width: 750px; float:right; margin-right: 150px;">
+	<table id="tbl2">
+	<tr>	
+		<th>비회원 주문조회</th>
+	</tr>
+		<tr>
+		<td><input type="text" placeholder="  주문자명"></td>
+	</tr>
+	<tr>
+		<td><input type="text" placeholder="  하이픈(-)포함" style="width:325px; height: 50px"></td>
+	</tr>
+	<tr>
+		<td><input type="password" placeholder="  비회원주문 비밀번호"></td>
+	</tr>
+	<tr>
+		<td><input type="submit" value="비회원 주문 조회하기" id="searchBtn"></td>
+	</tr>
+	</table>
+
+</div>
+
+<div style="clear: both; padding: 20px; margin-left: 135px;">
+<a href="http://localhost/html_prj/css0321/member_form.html">회원가입 |</a>
+<a href="#void">아이디 찾기 |</a>
+<a href="#void">비밀번호 찾기</a>
+</div>
+
+</body>
+</html>
