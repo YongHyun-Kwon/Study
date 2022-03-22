@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+/* embed : 이 페이지에서만 사용되는 디자인 정의 */
+div { border: 1px solid #333; width:300px; height: 200px; }
+#fix{ position: fixed; top:30px; left: 340px; background-color: #0000FF} /* relative의 영향을 받지 않는다. */
+#abs{ position: absolute; top: 240px; left: 340px; background-color: #FF0000 } /* relative에 영향을 받는다. */
+#rel{ position: relative; top: 540px; left: 340px; }
+</style>
+</head>
+<body>
+<div id="rel">relative
+	<div id = "fix">fixed</div><!-- relative안에 포함되어 있어도 브라우저 최상단이 시작좌표가 된다. -->
+	<div id="abs">absolute</div> <!-- relative안 포함되면 relative의 시작점이 시작좌표로 변경된다. -->
+</div>
+</body>
+</html>
