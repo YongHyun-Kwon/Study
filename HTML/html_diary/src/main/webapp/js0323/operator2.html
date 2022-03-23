@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통 CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css">
+<style type="text/css">
+.bgcolor{ background-color:  #E6E6E6 }
+table{ border-spacing: 0px; border:1px solid #333 }
+td{ border: 1px solid #333; padding: 5px ; width: 100px;text-align: center;}
+</style>
+<script type="text/javascript">
+//산술연산자. +, - , *, / , %(큰 수를 몇가지의 작은 수로 만들 때 )
+document.write("<table>");
+for( var i=0 ; i < 10 ; i++ ){
+	document.write("<tr"+(i%2==0?" class='bgcolor'":"") +">");
+	document.write("<td>"+  (i+1) +"</td>");
+	document.write("</tr>");
+}//end for
+document.write("</table>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

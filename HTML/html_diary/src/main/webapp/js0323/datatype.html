@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통 CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css">
+<style type="text/css">
+/* 디자인 시작 */
+#wrap{ width: 1200px; height: 1200px; margin: 50px auto; }
+
+#header{ height: 230px; position:relative; background: #FFFFFF url(http://localhost/html_prj/common/images/header_background.png) repeat-x; }
+#headerText{ width: 300px; height: 70px; position: absolute; top:50px; left: 60px; font-weight: bold;
+	font-size: 40px; font-family: 고딕  }
+#naviBar{ width:1200px;height: 60px; position:absolute;top: 170px;  }
+
+#container{ height: 820px;  }
+
+#footer{ height: 150px; position: relative; }
+#footerText{ float: right;padding-right: 20px; font-weight: bold; font-size: 20px;
+ color:#6D6D6D;padding-top: 40px }
+/* 디자인 끝 */
+
+</style>
+<script type="text/javascript">
+//1.변수의 선언
+var test;
+//2. 값 할당. - 문자열만 존재하므로 '와 " 모두 사용가능.
+//test="오늘은 수요일 입니다."; 
+test='오늘은 수요일 입니다.';
+//3. 값사용
+console.log("문자열 : "+ typeof(test)+ " "  + test );
+
+//2.값할당. 할당되는 값의 데이터형에 대해 변수의 데이터형이 변경된다.
+test=2022;
+//3.값 사용
+console.log("숫자 : "+ typeof(test)+ " "+ test );
+
+//2.값할당. 할당되는 값의 데이터형에 대해 변수의 데이터형이 변경된다.
+test=2022.03;
+//3.값 사용
+console.log("숫자 : "+ typeof(test)+ " "+ test );
+//2.값할당. 할당되는 값의 데이터형에 대해 변수의 데이터형이 변경된다.
+test=true;
+//3.값 사용
+console.log("불린 : "+ typeof(test)+ " "+ test );
+</script>
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<div id="headerText">Class 4.</div>
+		<div id="naviBar">
+		
+		</div>
+	</div>
+	<div id="container">
+	
+	</div>
+	<div id="footer">
+		<div id="footerText">
+		CopyRight&copy; Class 4 All Right Reserved. 
+		</div>
+	</div>
+</div>
+</body>
+</html>

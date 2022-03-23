@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통 CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css">
+<style type="text/css">
+body{ font-size: 20px }
+</style>
+<script type="text/javascript">
+//단항연산자
+//~,!,+,-,++,--
+//~ (titld : 1의 보수연산)
+let num=3;
+let num2=-3;
+/* <script>태그 안쪽은 JavaScript영역므로 html태그를 직접 사용할 수 없다.  Error*/
+/* document.write(num);<br/> */
+document.write(num+"<br/>"); 
+document.write("<strong>"+num+"</strong><br/>");
+//~양수 : 부호변경 1증가
+document.write("~"+num+"="+ ~num+"<br/>");
+//~음수 : 부호변경 1감소
+document.write("~"+num2+"="+ ~num2+"<br/>");
+
+num=true;
+num2=false;
+//!- true -> false, false ->true
+document.write("!"+num+"="+ !num+"<br/>");
+document.write("!"+num2+"="+ !num2+"<br/>");
+
+num=3;
+num2=-23;
+//+ : 형식적인 제공
+document.write("+"+num+"="+ +num+"<br/>");
+document.write("+"+num2+"="+ +num2+"<br/>");
+
+//- : 2의 보수 연산, 부호바꿈연산
+document.write("-"+num+"="+ -num+"<br/>");
+document.write("-"+num2+"="+ -num2+"<br/>");
+
+//++(증가연산), --(감소연산)
+++num;//전위연산
+num++;//후위연산
+document.write("++ 연산 후 : "+num +"<br/>");
+
+--num;//전위연산
+num--;//후위연산
+document.write("-- 연산 후 : "+num +"<br/>");
+
+//대입연산자와 함께사용.
+var result=0;
+// 전위 : 내것 먼저( 연산 후 대입 수행)
+result= ++num;
+document.write("전위 연산 후 result : "+result+", num : "+num+"<br/>");
+//후위 : 남의 것 먼저(대입 후 연산수행)
+result=0;
+result= num++;
+document.write("후위 연산 후 result : "+result+", num : "+num+"<br/>");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

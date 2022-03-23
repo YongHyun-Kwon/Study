@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통 CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+//논리연산자
+let flag1=true;
+let flag2=false;
+let flag3=true;
+let flag4=false;
+//일반논리
+//&& : 전항과 후항이 모두 참일 때 참 반환.
+console.log(flag1+" && "+ flag3+" = "+ (flag1 && flag3)); //true
+console.log(flag1+" && "+ flag2+" = "+ (flag1 && flag2));//false
+//전항이  false면 후항을 연산하지 않고 false의 결과를 만든다.
+console.log(flag2+" && "+ flag1+" = "+ (flag2 && flag1));//false
+console.log(flag2+" && "+ flag4+" = "+ (flag2 && flag4));//false
+// || : 전항과 후항이 모두 거짓일 때 거짓 반환.
+//전항이 true면 후항을 연산하지 않고  true의 결과를 만든다.
+console.log(flag1+" || "+ flag3+" = "+ (flag1 || flag3)); //true
+console.log(flag1+" || "+ flag2+" = "+ (flag1 || flag2));//true
+
+console.log(flag2+" || "+ flag1+" = "+ (flag2 || flag1));//true
+console.log(flag2+" || "+ flag4+" = "+ (flag2 || flag4));//false
+
+let num1=9;
+let num2=3;
+//비트논리
+//& : 상위비트와 하위비트가 모두 1일때 1내림.
+//1001 & 0011 = 0001
+console.log(num1+" & "+ num2+" = "+ (num1 & num2));// 1
+
+// | : 상위비트와 하위비트가 모두 0일때 0내림.
+//1001 | 0011 =1011
+console.log(num1+" | "+ num2+" = "+ (num1 | num2));// 11
+//^ : 상위비트와 하위비트 둘중 하나만 1일 때 1내림.
+//1001 ^ 0011 =1010
+console.log(num1+" ^ "+ num2+" = "+ (num1 ^ num2));// 10
+</script>
+</head>
+<body>
+
+</body>
+</html>

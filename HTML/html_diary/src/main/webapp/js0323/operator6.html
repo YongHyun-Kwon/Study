@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통 CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+var input=prompt("나이를 입력해주세요.", "0");
+document.write("입력값 : " + input +"<br/>" );
+//입력값이 19세 이상이면 "으른" 이미지를 출력하고,
+// 그렇지 않으면 "아이" 이미지를 출력한다.
+let img="";
+img = input >18 ?"adult":"child";// 삼항연산자
+document.write("<img src='images/" + img +".png'/><br/>" );
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통 CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css">
+<style type="text/css">
+/* 디자인 시작 */
+#wrap{ width: 1200px; height: 1200px; margin: 50px auto; }
+
+#header{ height: 230px; position:relative; background: #FFFFFF url(http://localhost/html_prj/common/images/header_background.png) repeat-x; }
+#headerText{ width: 300px; height: 70px; position: absolute; top:50px; left: 60px; font-weight: bold;
+	font-size: 40px; font-family: 고딕  }
+#naviBar{ width:1200px;height: 60px; position:absolute;top: 170px;  }
+
+#container{ height: 820px;  }
+
+#footer{ height: 150px; position: relative; }
+#footerText{ float: right;padding-right: 20px; font-weight: bold; font-size: 20px;
+ color:#6D6D6D;padding-top: 40px }
+/* 디자인 끝 */
+
+</style>
+<script type="text/javascript">
+var msg="JavaScript";
+
+console.log( msg );
+
+//var는 같은 이름을 변수를 여러 개 선언 할 수 있다.
+var msg=2022;
+console.log( msg );
+
+//상수선언 
+const msg1="const";
+//값할당 : Error 
+//msg1="값할당";
+console.log("상수 : "+ msg1 );
+
+//let :
+//변수선언
+let msg2="let";
+//값할당
+msg2="test let";
+//값 사용
+console.log("let : "+ msg2 );
+
+//let은 같은 이름으로 변수를 선언할 수 없다.
+//let msg2="같은이름으로 선언";
+
+//var는 hosting이 되기 때문에 아래줄에 선언된 변수를 사용할 수 있다.
+console.log( "msg3 : "+ msg3 );
+var msg3="테스트";
+
+//let은 hosting이 되지 않기 때문에 아랫줄에 선언된 변수를 사용할 수 없다.
+//console.log( "msg4 : "+ msg4 ); // error
+let msg4="테스트";
+
+</script>
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<div id="headerText">Class 4.</div>
+		<div id="naviBar">
+		
+		</div>
+	</div>
+	<div id="container">
+	
+	</div>
+	<div id="footer">
+		<div id="footerText">
+		CopyRight&copy; Class 4 All Right Reserved. 
+		</div>
+	</div>
+</div>
+</body>
+</html>

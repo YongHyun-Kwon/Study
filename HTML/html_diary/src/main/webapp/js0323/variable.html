@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통 CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css">
+<style type="text/css">
+/* 디자인 시작 */
+#wrap{ width: 1200px; height: 1200px; margin: 50px auto; }
+
+#header{ height: 230px; position:relative; background: #FFFFFF url(http://localhost/html_prj/common/images/header_background.png) repeat-x; }
+#headerText{ width: 300px; height: 70px; position: absolute; top:50px; left: 60px; font-weight: bold;
+	font-size: 40px; font-family: 고딕  }
+#naviBar{ width:1200px;height: 60px; position:absolute;top: 170px;  }
+
+#container{ height: 820px;  }
+
+#footer{ height: 150px; position: relative; }
+#footerText{ float: right;padding-right: 20px; font-weight: bold; font-size: 20px;
+ color:#6D6D6D;padding-top: 40px }
+/* 디자인 끝 */
+
+</style>
+<script type="text/javascript">
+//1. 선언
+var msg; //지역변수 : var 변수명;
+day=23; //전역변수 : 변수명=값;
+
+//2. 값할당
+msg="오늘은 수요일";
+
+//3.값 사용(지역변수)
+console.log("지역변수 : "+ msg);
+
+//2. 값 사용(전역변수)
+console.log("전역변수 : "+ day );
+
+function test(){
+	//지역변수와 전역변수의 차이.
+	var loc="local";//지역변수는 선언된 함수 안에서만 사용할 수 있다.
+	glo="global"; //전역변수는 선언된 함수 안에서 사용할 수 있다.
+	
+	console.log("함수 안 지역변수 : "+ loc);
+	console.log("함수 안 전역변수 : "+ glo);
+	console.log( msg+" / " + day);
+	
+}//test
+
+function call(){
+	//전역변수는 다른 함수 안에서 선언된 변수일지라도 사용할 수 있다.
+	console.log("call---------"+ msg+" / " + day);
+	console.log("외부함수  전역변수 : "+ glo);
+	//지역변수는 다른 함수에서 사용할 수 없다. error
+	//console.log("외부함수 지역변수 : "+ loc);
+}//class
+
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<div id="headerText">Class 4.</div>
+		<div id="naviBar">
+		
+		</div>
+	</div>
+	<div id="container">
+	
+	<input type="button" value="test function" class="btn" onclick="test()"/>
+	<input type="button" value="call function" class="btn" onclick="call()"/>
+	
+	</div>
+	<div id="footer">
+		<div id="footerText">
+		CopyRight&copy; Class 4 All Right Reserved. 
+		</div>
+	</div>
+</div>
+</body>
+</html>
