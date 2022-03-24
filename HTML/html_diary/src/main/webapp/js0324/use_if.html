@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<style type="text/css">
+#nameDiv { font-size: 20px; font-weight: bold }
+.div{ width: 150px; height: 150px; font-weight: bold;  font-size : 20px;text-align: center; }
+</style>
+
+<script type="text/javascript">
+// 입력된 이름이 "강명준" 일때만 js023/child.png를 보여주고
+var name = prompt("이름을 입력해주세요");
+document.write("<div>이름 <span id='nameDiv'>" + name +"</span><br/>");
+if(name == "강명준"){		
+	
+	document.write("<img src='../js0323/images/child.png'/>")
+}
+document.write("</div>");
+
+// 수를 입력받아 홀수면 수를 출력 바닥색을 빨강 글자는 파랑
+// 짝수면 바닥은 검은색 글자색은 노랑색 설정
+var num = prompt("숫자를 입력해주세요");
+let bgColor = "";
+let fontColor="";
+
+if(num % 2 == 0) {
+	bgColor ="#000000";
+	fontColor = "yellow";
+} else{
+	bgColor = "#FF0000";
+	fontColor= "blue";
+}
+
+document.write("<div class='div' style='width: 150px; height; 150px; background-color :" 
++ bgColor +"; color:" + fontColor +"'\>" + num + "</div>")
+
+// 이름을 입력받아 "강명준"이면 chile.png를 조장이면 박설진, 신유철 김진영 adult.png를
+// 그렇지 않으면 common/images/right.png를 출력한 후 이름을 출력하는 코드 작성
+
+var img="";
+if(name === "강명준"){
+	img="../js0323/images/child.png"
+} else if(name === "박설진" || name === "신유철" || name ==="김진영") {
+	img="../js0323/images/adult.png"
+} else {
+	img="../common/iamges/right.PNG";
+}
+document.write("<div><img src='" + img + "'/><span>"+name+"</span></div>")
+</script>
+</head>
+<body>
+
+
+</body>
+</html>

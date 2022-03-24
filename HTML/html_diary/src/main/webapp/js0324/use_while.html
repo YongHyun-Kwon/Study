@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+let i = 0;
+let check = "checked";
+while( i < 11 ) {
+	if(i ==0){
+		document.write("<input type='radio' naeme='score' value='"+i+ "'checked/>" + i + "점 &nbsp;");
+	}
+	document.write("<input type='radio' naeme='score' value='"+i+ "'/>" + i + "점 &nbsp;");
+	i++;
+}
+document.write("<br/>");
+
+// do~while
+i = 1; 
+do{
+	document.write( i+" "); 
+	i+=2;
+} while(i < 101);
+</script>
+</head>
+<body>
+
+</body>
+</html>

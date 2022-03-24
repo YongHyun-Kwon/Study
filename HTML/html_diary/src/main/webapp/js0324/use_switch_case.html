@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+//요일을 비교하여 요일별메시지를 출력
+let bloodType=prompt("혈액형을 입력해주세요\n A,B,AB,O","A");
+
+let img="";
+
+switch( bloodType ){
+case "A": img = "blood_a.PNG"; break;
+case "B": img = "blood_b.PNG"; break;
+case "AB": img = "blood_ab.PNG"; break;
+case "O": img = "blood_o.PNG"; break;
+default: img = "default.PNG"; 
+}
+
+document.write("<img src='images/" + img +"'/");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

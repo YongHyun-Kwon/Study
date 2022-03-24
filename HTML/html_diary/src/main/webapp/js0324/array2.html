@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css"
+	href="http://localhost/html_prj/common/css/main_20220321.css" />
+<style type="text/css">
+td { border: 1px solid #333;}
+</style>
+<script type="text/javascript">
+	// 이치원 배열
+	// 1. 선언) - 일차원 배열 선언
+	var arr = new Array();
+	// 2. 방에 일차원 배열을 생성.
+	arr[0] = new Array(); // 0행
+	arr[1] = new Array(); // 1행
+	arr[2] = new Array(); // 2행
+
+	// 3. 값 할당)- 행마다 값을 다르게 할당하면 가변 배열로 생성된다.
+	arr[0][0] = 10;
+	arr[0][1] = 20;
+	arr[0][2] = 30;
+	arr[0][3] = 40;
+	arr[1][0] = 50;
+	arr[1][1] = 60;
+	arr[1][2] = 70;
+	arr[1][3] = 80;
+	arr[2] = [ 90, 100, 110, 120 ];
+
+	document.write("행" + arr.length + "<br/>");
+	for (var i = 0; i < arr.length; i++) {
+		document.write("arr[" + i + "] 열의수 :" + arr[i].length + "<br/>");
+	} // end for
+// 테이블을 생성하여 배열의 모든 방의 값을 출력
+
+document.write("<table>");
+document.write("<tr>");
+for(var i =0; i < arr.length; i++){
+	document.write("<tr><td style='width:80px'>" + i + "행</td>");
+	for(var j = 0; j < arr[i].length; j++){
+		document.write("<td style='width:1009px'>" + arr[i][j] + "</td>");
+	} // end for
+	document.write("</tr>");
+} // end for
+	document.write("</table>");
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
