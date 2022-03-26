@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.135/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	function useMath() {
+		let num =-325;
+		console.log(num +'의 절대값: ' + Math.abs(num));
+		
+		num = 10.5;
+		console.log(num + "의 반올림 : " + Math.round(num));
+		num = 10.5;
+		console.log(num + "의 올림 : " + Math.ceil(num));
+		num = 10.5;
+		console.log(num + "의 내림 : " + Math.floor(num));
+		//실수를 정수로 변경
+		var val=pareInt(num);
+		console.log(num+"을 정수만: " + val);
+		
+		// 난수
+		var ran = Math.random();
+		console.log("발생한난수:" +ran);
+		console.log("범위 난수 : " + ran * 10);
+		console.log("범위 난수에서 정수만 얻기 : " + parseInt(ran*10));
+		
+	} // useMath
+	
+</script>
+</head>
+<body>
+<input type="button" value="Math사용" class="btn" onmouseover="useMath()"/>
+</body>
+</html>

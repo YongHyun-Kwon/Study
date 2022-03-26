@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.135/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+/* 디자인 시작 */
+
+</style>
+
+<script type="text/javascript">
+
+function typeA(){
+	alert('고정일');
+}
+function typeB(name){
+	alert('가변일:매개변수 값 ' + name);
+}
+function typeC(){
+	return '고정 값';
+}
+function typeD(name){
+	return '가변 값 : 매개변수 값 + name';
+}
+
+function callTypeA(){
+	typeA();
+}
+
+function callTypeB(){
+	let name = "권용현";
+	typeB( name );
+}
+
+function callTypeC(){
+	let msg = typeC;
+	alert(msg);
+}
+function callTypeD(){
+	let msg = typeD( '강산');
+	alert(msg);
+}
+
+//초기 값을 정의한 매개변수
+function typeE(name = '익명', age= 0) {
+	console.log('name:' + name + ", age :" + age);
+} // typeE
+
+function callTypeE() {
+	typeE('권용현',25);
+	typeE();
+}
+
+</script>
+</head>
+<body>
+<input type="button" value="고정일" class="btn" onclick="callTypeA()"/>
+<input type="button" value="가변일" class="btn"  onclick="callTypeB()"/>
+<input type="button" value="고정값" class="btn" onclick="callTypeC()"/>
+<input type="button" value="가변값" class="btn" onclick="callTypeD()"/>
+</body>
+</html>

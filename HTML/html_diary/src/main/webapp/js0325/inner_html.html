@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.135/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+div{ width : 50%; height:200px; border: 1px solid #333}
+</style>
+<script type="text/javascript">
+	function useInnerHTML(){
+		// 디자인을 변경할 태그를 찾고
+		var divNode=document.getElementById("a");
+		//alert(divNode);
+		// innerHTML속성을 사용하여 변경.
+		divNode.innerHTML=
+			"<strong>날씨 흐림</strong><marquee scrollamount='10'><img src='images/weather.png'></marquee>";
+	}
+</script>
+
+</head>
+<body>
+
+	<input type="button" value="클릭" class="btn" onclick="useInnerHTML()"/>
+	<div id="a"></div>
+	<input type="button" id="b" value="id=b" class="btn"/>
+</body>
+</html>

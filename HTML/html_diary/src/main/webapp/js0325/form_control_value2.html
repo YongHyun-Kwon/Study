@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.135/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+input,select,textarea{ margin-top: 10px;}
+#output{ margin-top: 20px; border:2px solid #333; width: 400px; height: 200px; overflow: auto}
+</style>
+<script type="text/javascript">
+	function getValue() {
+		// HTML Form Control에 부여된 name 속성을 사용하여 값 얻기.
+		// 1. <form>태그 까지 접근하여 변수 저장.
+		var obj = document.frm;
+		// 2. form의 name 을 사용하여 form 안에 form control로 접근 : 폼이름.control명.value
+		var data="<ul>";
+		
+		data+= "<li><strong>text :</strong> " + obj.text.value+"</li>";
+		data+= "<li><strong>password :</strong> " + obj.pass.value+"</li>";
+		data+= "<li><strong>hidden :</strong> " + obj.hid.value+"</li>";
+		// chrome의 사용자의 경로를 보안상 변경(fakepath)하여 보여준다.
+		data+= "<li><strong>file :</strong> " + obj.file.value+"</li>";
+		// checkbox나 radio는 하나인 경우 value로 값을 얻고, 하나 이상이면 배열로 값을 얻는다.		
+		data+= "<li><strong>checkbox :</strong> " + obj.chk.value+"</li>";
+		data+= "<li><strong>radio :</strong> " + obj.rad.value+"</li>";
+		data+= "<li><strong>date :</strong> " + obj.date.value+"</li>";
+		// select는 배열문법으로 값을 얻을 수 있다.
+		data+= "<li><strong>select :</strong> " + obj.sel.value+"</li>";
+		data+= "<li><strong>textarea:</strong>"+ obj.ta.value.replaceAll("\n","<br/>")+"</li>";
+		data+= "</ul>";
+		// 3. 값을 출력할 tag 얻기
+		var divNode=document.getElementById("output");
+		divNode.innerHTML=data;
+	} // getValue
+</script>
+</head>
+<body>
+<div>
+	<form name="frm">
+		<strong> name 속성의 이름이 유일할 때 값 얻기</strong><br/>
+		<label>text</label><input type="text" name="text" class="inputBox"/><br/>
+		<label>password</label><input type="password" name="pass" class="inputBox"/><br/>
+		<label>hidden</label><input type="hidden" name="hid" value="히든태그 값"/><br/>
+		<label>file</label><input type="file" name="file" class="inputBox"/><br/>
+		<label>checkbox</label><input type="checkbox" name="chk"/><br/>
+		<label>radio</label><input type="radio" name="rad" value="라디오"/><br/>
+		<label>date</label><input type="date" name="date" class="inputBox"/><br/>
+		<label>select</label>
+		<select name="sel" class="inputBox">
+			<option value="1">sel1</option>
+			<option value="2">sel2</option>
+			<option value="3">sel3</option>
+		</select>
+		<br/>
+		<label>textarea</label>
+		<textarea class="inputBox" style="width: 300px; height: 150px" name="ta"></textarea>
+		<br/>
+		<input type="button" value="값 얻기" class="btn" onclick="getValue()">
+	</form>
+</div>
+<div id="output"></div>
+</body>
+</html>

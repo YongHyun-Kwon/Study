@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.135/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+div{width:500px; height: 300px; border: 1px solid #333; overflow: auto}
+</style>
+<script type="text/javascript">
+	function useString() {
+		var msg= "HTML-구조,CSS-디자인,JavaScript-연산";
+		// 출력 데이터
+		let output = msg + '의 길이 :' + msg.length + "<br/>"; // length는 keyword
+		//문자열 함수 사용
+		output += "대문자 :" + msg.toUpperCase() + "<br/>";
+		output += "소문자 :" + msg.toLocaleLowerCase() + "<br/>";
+		output += msg+"에서 'C' 의 인덱스 " + msg.indexOf("C") + "<br/>";
+		output += msg+"에서 뒤에서 'S' 의 인덱스 " + msg.lastIndexOf("S") + "<br/>";
+		msg="   JavaScript Java   "
+		output += msg+"에서 앞뒤공백 제거 [" + msg.trim() + "]" + "<br/>";
+		// replaceAll - ES6지원 : 문자열내의 모든 문자열을 치환
+		output += msg+"에서 'a문자를 'ki'로 치환 :" + msg.replaceAll("a","ki") + "<br/>";
+		// replace : 문자열 내에 최초 일치하는 한 ㅜㄴ자만 치환
+		output += msg+"에서 'a문자를 'ki'로 치환 :" + msg.replace("a","ki") + "<br/>";
+		
+		var csvData="Java,Oracle,JDBC,HTML,CSS,JavaScript";
+		var arr = csvData.split(",");// 문자열에서 기준문자열로 구분하여 배열로 생성
+		
+		var arrOutput="<ul>";
+		for( var i = 0; i < arr.length; i++){
+			arrOutput += "<li>" + arr[i] + "</li>";
+		} // end for
+		arrOutput += "</li>";
+		
+		output += arrOutput+"<hr/>";
+		output += csvData.substring(5, 11)+"<br/>"; // 시작문자열, 끝 문자열 +1
+		
+		output += csvData.concat(",jQuery") + "<br/>";
+		
+		//출력할 노드 얻기
+		var divNode=document.getElementById("output");
+		divNode.innerHTML = output;
+	}
+</script>
+
+</head>
+<body>
+<input type="button" value = "문자열함수" class="btn" onclick="useString()"/>
+<div id="output"></div>
+</body>
+</html>
