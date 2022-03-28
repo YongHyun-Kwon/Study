@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+function setValue() {
+	// 1. 폼얻기
+	var obj = document.frm;
+	// 2. 폼으로 Control 객체 접근하여 값 설정
+	obj.text.value = "text에 값 설정";
+	obj.password.value = "password에 값 설정";
+	obj.hid.value = "hidden 값 설정";
+	obj.date.value = "2022-03-29"; // date는 날짜형식으로 지정
+	//obj.file.value = "e:/dev/env.bat"; //file은 값을 설정할 수 없다.
+	obj.ta.value="오늘은 월요일 입니다."
+	
+	// 이미지는 value 속성이 아닌 src속성으로 이미지를 설정한다.
+	//obj.img.value="../common/images/google_log.png";
+	obj.img.src="../common/images/google_logo.png";
+	
+	obj.ta.value = obj.img.src;
+}
+
+function setStatus() {
+	
+	var obj = document.frm;
+	
+	//checked변경
+	//radio상태변경
+	obj.gender[0].checked=true;
+	obj.hobby[2].checked = true;
+	obj.domain[2].selected = true;
+}
+</script>
+</head>
+<body>
+<form name = "frm">
+<div>
+	<strong>value 설정</strong><br/>
+	<label>text</label><input type="text" name="text" class="inputBox"/><br/>
+	<label>password</label><input type="password" name="password" class="inputBox"/><br/>
+	<label>hidden</label><input type="hidden" name="hid" class="inputBox"/><br/>
+	<label>date</label><input type="date" name="date" class="inputBox"/><br/>
+	<!-- file 값을 설정할 수 없다. -->
+	<label>file</label><input type="file" name="file" class="inputBox"/><br/>
+	<label>textarea</label><textarea name="ta" class="inputBox" style="width:300px;height:100px;"></textarea><br/>
+	<img src="../common/images/daum_logo.png" name="img"/><br/>
+	
+	<input type="button" value="값설정" class="btn" onclick = "setValue()"/><br/>
+</div>
+<div>
+	<strong>상태변환</strong>
+	<label>성별</label>
+	<input type="radio" name ="gender" value="남자">남
+	<input type="radio" name ="gender" value="여자">여
+	<br/>
+</div>
+<div>
+	<strong>checked 속성 사용</strong><br/>
+	<label>성별</label><br/>
+	 <input type="radio" value="남자" name="gender"/>남자<br/>
+	 <input type="radio" value="여자" name="gender"/>여자<br/>
+	 <br/>
+	 <label>취미</label><br/>
+	 <input type="checkbox" value="요리" name="hobby"/>요리<br/>
+	 <input type="checkbox" value="등산" name="hobby"/>등산<br/>
+	 <input type="checkbox" value="라이딩" name="hobby"/>라이딩<br/>
+	 <input type="checkbox" value="게임" name="hobby"/>게임<br/>
+	 <input type="checkbox" value="음악감상" name="hobby"/>음악감상<br/>
+	 
+</div>
+<div>
+	<strong>selected 속성 사용</strong><br/>
+	<select name = "domain">
+		<option value="none">직접입력</option>
+		<option value="gmail.com">지메일</option>
+		<option value="daum.net">다음</option>
+		<option value="naverc.com">네이버</option>
+	</select>
+	<br/>
+	<input type="button" value="상태변경" class="btn" onclick = "setStatus()"/><br/>
+</div>
+<div>
+
+</div>
+</form>
+</body>
+</html>

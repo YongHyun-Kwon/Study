@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통CSS 
+CSS파일이 존재하지 않으면 CSS파일을 찾기위해 로딩시간이 오래걸린다.
+-->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+function getRadioValue() {
+	// 1. 폼얻기
+	var obj = document.frm;
+	// 2. control 얻기
+	//alert(obj.gender[0].value+"/"+ obj.gender[1].value )
+	//alert(obj.gender[0].checked+"/"+ obj.gender[1].value )
+	var gender; // 변수에 대한 초기화를 하지 않으면 "undefined"
+	for( var i = 0; i < obj.gender.length; i++){
+		if( obj.gender[i].checked){
+			gender = obj.gender[i].value;
+		}
+	} // end for
+	
+	if(typeof(gender)=="undefined"){
+		alert("성별을 선택해주세요.");
+		return;
+	} // end if
+	
+	// 선택된 성별을 div출력
+	var divNode = document.getElementById("output");
+	divNode.innerHTML="선택하신 성별은 [" + gender + "]입니다."
+	
+} // getRadioValue
+
+function getCheckBoxValue() {
+	// 1. form 얻기
+	var obj = document.frm;
+	
+	//2. 
+	var value="";
+	for(var i = 0; i < obj.hobby.length; i++){ // 배열로 얻어지는 control이므로 반복한다.
+		if(obj.hobby[i].checked){ // 반복중인 <input>에 checked 상태
+			value += obj.hobby[i].value+" ";
+		} // end if
+	} //end for
+	
+	if(value==""){
+		value = "선택한 취미 없음.";
+	} // end if
+	
+	// 선택된 성별을 div출력
+	var divNode = document.getElementById("output");
+	divNode.innerHTML= value;
+
+	
+} // getCheckBoxValue
+
+function getSelectValue() {
+	
+	// 1. form 객체 얻기
+	var obj = document.frm;
+	// 2. 반복 ( option이 여러개 )
+/* 	var value ="";
+	for(var i = 0; i < obj.domain.length; i++){
+		//alert(obj.domain[i].selected);
+		if(obj.domain[i].selected){
+			value = obj.domain[i].value;
+			break; // 옵션은 하나만 선택될 수 있으므로 선택된 <option> 하위 옵션을 비교할 필요가 없다.
+		} // end if
+	} // end for */
+	
+	//value = obj.domain.selectedIndex;
+	//value = obj.domain[obj.domain.selectedIndex].value;
+	value = obj.domain.value;
+	
+	// 선택된 도메인을 div출력
+	var divNode = document.getElementById("output");
+	divNode.innerHTML= value;
+} // getSelectValue
+</script>
+</head>
+<body>
+<form name ="frm">
+<div>
+	<strong>checked 속성 사용</strong><br/>
+	<label>성별</label><br/>
+	 <input type="radio" value="남자" name="gender"/>남자<br/>
+	 <input type="radio" value="여자" name="gender"/>여자<br/>
+	 <input type="button" value="라디오 값 얻기" class="btn" onclick="getRadioValue()"/>
+	 <br/>
+	 <label>취미</label><br/>
+	 <input type="checkbox" value="요리" name="hobby"/>요리<br/>
+	 <input type="checkbox" value="등산" name="hobby"/>등산<br/>
+	 <input type="checkbox" value="라이딩" name="hobby"/>라이딩<br/>
+	 <input type="checkbox" value="게임" name="hobby"/>게임<br/>
+	 <input type="checkbox" value="음악감상" name="hobby"/>음악감상<br/>
+	 <input type="button" value="체크박스 값 얻기" class="btn" onclick="getCheckBoxValue()"/>
+	 
+</div>
+<div>
+	<strong>selected 속성 사용</strong><br/>
+	<select name = "domain">
+		<option value="none">직접입력</option>
+		<option value="gmail.com">지메일</option>
+		<option value="daum.net">다음</option>
+		<option value="naverc.com">네이버</option>
+	</select>
+	 <input type="button" value="select 값 얻기" class="btn" onclick="getSelectValue()"/>
+</div>
+</form>
+<div id="output">checked속성 사용</div>
+</body>
+</html>
