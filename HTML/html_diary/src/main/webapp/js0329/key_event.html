@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+	
+window.onload=function() {
+	
+	//document.getElementById("text").addEventListener("keydown",keyEvt)
+	document.getElementById("text").addEventListener("keyup",keyEvt);
+} // onload
+
+
+
+function keyEvt(evt) { // 매개변수는 위 addEventListenr함수에서 발생한 이벤트를 할당해준다.
+	
+
+	var textElement = document.getElementById("text")
+	// 눌린키의 키코드와 키의 text얻기
+	 //입력받은 이벤트 객체를 키의 text를 얻을 수 없다.
+	var output ="키코드 : " + evt.which + "키문자 " + textElement.value;
+	
+	var divNode = document.getElementById("output");
+	divNode.innerHTML = output;
+	
+
+} // keyEvt
+</script>
+</head>
+<body>
+<input type="text" name="text" id ="text" class="inputBox" placeholder="키를 눌러주세요"
+autofocus="autofocus"/>
+<div id="output" style=" width: 300px; height: 200px; border:1px solid #333; overflow: auto; margin-top: 20px"></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+// 이벤트 등록
+window.onload = function(){
+	// 1. 이벤트를 등록하는 코드와 
+	// click 이벤트
+	document.getElementById("confirmBtn").addEventListener("click",useConfirm);
+	// change이벤트
+	document.getElementById("url").addEventListener("change",useLocation);
+}// onload
+ //2. 이벤트를 처리 하는 코드를 분리할수 있다.
+function useConfirm() {
+	var value = confirm("글을 삭제하시겠습니까?");
+	if(value) {
+		alert('글이 삭제 되었습니다.');
+	} else {
+		alert('글이 삭제되지 않았습니다.');
+		
+	}
+} // useConfirm
+
+function useLocation(){
+	var sel = document.frm.url;
+	// 이동할 사이트를 선택하시겠습니까? 가 아니었을 때 아래의코드를 실행
+//	if(sel.value == "none"){
+	if(sel.selectedIndex == 0){
+		return;
+	} // end if
+	if(confirm(sel.value+"으로 이동하시겠습니까?")){
+		location.href="http://"+ sel.value;
+	}  // end if
+
+} // useLocation
+</script>
+</head>
+<body>
+
+<input type="button" value = "confirm dialog" class="btn" id="confirmBtn"/><br/>
+<form name="frm">
+	<select id="url" name="url" class="inputBox">
+		<option value="none">--이동할 사이트를 선택--</option>
+		<option value="google.com">구글</option>
+		<option value="daum.net">다음</option>
+		<option value="naver.com">네이버</option>
+		<option value="youtube.com">유튜브</option>
+	</select>
+</form>
+</body>
+</html>
