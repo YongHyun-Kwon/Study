@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+[name='saveFlag'] { font-size: 20px; width: 20px; height: 20px;}
+</style>
+<script type="text/javascript">
+/* var jsonObj={msg:"hell",age:20};
+alert(jsonObj.msg+"/" + jsonObj.age ) */
+
+window.onload = function() {
+	
+	setData()
+	document.getElementById("btn").addEventListener("click",submit);
+}
+
+function submit() {
+	
+	var flag = window.document.frm.saveFlag.checked;
+	var name = window.document.frm.name.value;
+	
+	if(flag == true){
+		setStorage(name,flag)
+	} else {
+		localStorage.clear();
+	}
+ 	
+}
+
+function setStorage(name,flag) {
+	
+	localStorage.setItem("name",name);
+	localStorage.setItem("flag",flag);
+	
+}
+
+function setData() {
+	document.frm.name.value = localStorage.getItem("name");
+	window.document.frm.saveFlag.checked = localStorage.getItem("flag");
+}
+
+</script>
+</head>
+<body>
+<form name="frm">
+<label>이름</label><input type="text" name="name" class="inputBox" id="name"/>
+<input type="checkbox" name="saveFlag"/>저장<br/>
+<input type="button" value="입력" class="btn" id="btn"/>
+</form>
+</body>
+</html>

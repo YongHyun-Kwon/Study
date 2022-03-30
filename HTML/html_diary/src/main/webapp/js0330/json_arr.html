@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+window.onload = function() {
+	document.getElementById("useJsonArr").addEventListener("click", useJsonArr)
+}// onload
+
+function useJsonArr() {
+	// 1. JSONArray 생성
+	var jsonArr = [
+		{name:"정인선", age:20},	
+		{name:"전민정", age:22},	
+		{name:"장정우", age:24},
+		{age:23, name:"권용현"} // 이름으로 값을 얻기 때문에 JSONObject의 데이터순서는 상관없다.
+	];
+		
+	// 2. JSONArray 값 얻기
+	var output = "<table border = '1'><tr><th>이름</th><th>나이</th></tr>";
+		for( var i = 0; i < jsonArr.length; i++) {
+		// 반복되는 현재방의 값(JSON Object)을 얻어와서, 이름으로 값얻기
+		output +="<tr><td>" + jsonArr[i].name +"</td><td>" + jsonArr[i].age + "</td></tr>";
+	} // end for 
+	output +="</table>";
+	
+	document.getElementById("output").innerHTML = output;
+	
+}
+</script>
+</head>
+<body>
+<a href ="#void" id="useJsonArr">JSON배열사용</a>
+<div id ="output"></div>
+</body>
+</html>

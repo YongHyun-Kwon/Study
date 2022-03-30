@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	document.getElementById("jsonStringBtn").addEventListener("click", useString)
+	document.getElementById("jsonObjBtn").addEventListener("click", useJSON)
+}
+
+function useString() {
+	//문자열로 JSONObject생성
+	// 1. JSONObject 형태의 문자열 생성.
+	var data = "{name:'테스트', age:25, flag:true, func: function(){alert('문자열 형식')}}";
+	// 2. JSONObject 형태의 문자열을 객체로 생성.
+	var jsonObj=eval("("+data+")");
+	
+	document.getElementById("output").innerHTML = jsonObj.name+"/" + jsonObj.age+"/"
+	+ jsonObj.flag;
+	
+	//alert(jsonObj.func) //JSONObject가 함수를 값으로 가지고 있다면 JSON객체명.이름을 사용하면
+	// 함수의 내용이 문자열로 출력된다.
+	
+	jsonObj.func();
+	
+} // useString
+
+function useJSON() {
+	//JSONObject객체를 직접 생성.
+	var jsonObj = {name:"테스트1",age:30,flag:true,
+			func:function() {
+		
+		var date = new Date();
+		return date.getFullYear();
+	 }
+	};
+	
+	//alert(jsonObj);
+	// 값 추가: 객체명.추가할이름 = 값;
+	jsonObj.address = "서울시 강남구 역삼동";
+	jsonObj.zipcode = function() {
+		return "12345";
+	}
+	// 값 얻기
+	document.getElementById("output").innerHTML = "이름 : " + jsonObj.name +", 나이 :" +
+	jsonObj.age + "<br/>flag :" + jsonObj.flag + "<br/>추가 된 값<br/>주소 : " + jsonObj.address
+	+ ", 우편번호 : "  + jsonObj.zipcode() +", 현재 년도 : " +jsonObj.func();
+	
+	// 같은 이름으로 추가하면 이전 이름을 덮어 쓴다.
+	jsonObj.name="권용현";
+	
+	// 값 삭제 : 삭제된 이름을 사용하면 undefined가 출력된다.
+	alert("삭제 전 이름" + jsonObj.name);
+	delete jsonObj.name;
+	
+	alert("삭제 후 이름" + jsonObj.name);
+	
+} // useJSON
+</script>
+</head>
+<body>
+<input type="button" value="문자열형식" class="btn" id = "jsonStringBtn"/>
+<input type="button" value="JSON객체형식" class="btn" id = "jsonObjBtn"/>
+<div id="output"></div>
+</body>
+</html>

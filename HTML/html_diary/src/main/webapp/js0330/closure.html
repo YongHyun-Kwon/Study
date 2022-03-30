@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+window.onload = function() {
+	document.getElementById("btn1").addEventListener("click",useClosure1);
+	document.getElementById("btn2").addEventListener("click",useClosure2);
+	document.getElementById("btn3").addEventListener("click",useClosure3);
+}
+
+function useClosure1(){
+	var data = ({ name:"정인선",
+				  age:20,
+				  addr:function(){
+					 	return "서울시 강남구 역삼동" } 
+	});
+	alert(data.name + "/" + data.age +"/" +data.addr() );
+} // useClosure1
+
+function useClosure2(){
+	// {}를 사용한 closure : 함수안의 변수나 함수를 함수외부에서 사용하기 위해.
+	
+	var test = function() {
+		var name1 = "테스트"; // 변수
+		
+		var fun1 = function() { // 무기명 함수
+			return "무기명함수";
+		} // fun1
+		
+		function addr() {
+			return "서울시..";
+		} // addr
+		
+		return {na:name1, anony:fun1, address:addr}; // closure
+		
+	} // 무기명 함수
+	
+	// alert(test.name1) // 함수안의 변수는 외부에서 접근할 수 없다.
+	// alert(test.addr()) // 함수안의 함수는 외부에서 접근할 수 없다.
+	// 무기명함수에 ()를 붙이지 않았기 때문에 closure를 사용하려면 변수()를 붙여서 사용해야 한다.
+	alert( test().na + "/" + test().anony() + "/" + test().address())
+	
+} // useClosure2
+
+function useClosure3(){
+	// {}를 사용한 closure : 함수안의 변수나 함수를 함수외부에서 사용하기 위해.
+	
+	var test = function() {
+		var name1 = "테스트"; // 변수
+		
+		var fun1 = function() { // 무기명 함수
+			return "무기명함수";
+		} // fun1
+		
+		function addr() {
+			return "서울시..";
+		} // addr
+		
+		return {na:name1, anony:fun1, address:addr}; // closure
+		
+	}(); // 무기명 함수를 호출한다. test변수에는 closure가 return 된다.
+	
+	// alert(test.name1) // 함수안의 변수는 외부에서 접근할 수 없다.
+	// alert(test.addr()) // 함수안의 함수는 외부에서 접근할 수 없다.
+	alert( test.na + "/" + test.anony() + "/" + test.address())
+	
+} // useClosure3
+</script>
+</head>
+<body>
+<input type="button" value="closure1" class="btn" id="btn1"/>
+<input type="button" value="closure2" class="btn" id="btn2"/>
+<input type="button" value="closure3" class="btn" id="btn3"/>
+</body>
+</html>
