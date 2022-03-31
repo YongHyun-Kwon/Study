@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#btnHide").click(function() {
+		$("#img").hide();
+	})
+
+	$("#btnShow").click(function() {
+		$("#img").show();
+	})
+
+	$("#btnToggle").click(function() {
+		$("#img").toggle();
+	})
+	////////////change////////////////
+	$("#email2").change(function() {
+		//email2의 값을 가져와서
+		let email2 = $("#email2").val();
+		// N/A가 아니라면
+		if(email2 != 'N/A'){
+			$("#email3").val("");
+		// 값과 커서를 email3에 넘겨준다. none인 경우 커서만 이동
+		if(email2 != "none"){
+			$("#email3").val(email2);
+		  } // end if
+		$("#email3").focus();
+		} // end if
+	});
+	
+	$("#email1").change(function() { // text의 change
+		alert("값 변경 되었음")
+	})
+	
+}); // ready
+
+</script>
+</head>
+<body>
+<div style="height: 260px; width: 300px">
+	<img src="../js0324/images/blood_a.PNG" id="img"/>
+</div>
+<input type="button" value="숨기기" id="btnHide" class="btn"/>
+<input type="button" value="보이기" id="btnShow" class="btn"/>
+<!-- <input type="button" value="상태반전" id="btnToggle" class="btn"/> -->
+<a href="#void" id = "btnToggle">상태반전</a>
+
+<div>
+<input type="text" name="email1" id="email1" class="inputBox">@
+<select name="email2" id="email2" class="inputBox">
+	<option value="N/A">메일선택</option>
+	<option value="hotmail.com">핫메일</option>
+	<option value="gmail.com">지메일</option>
+	<option value="daum.net">다음메일</option>
+	<option value="naver.com">네이버메일</option>
+	<option value="none">직접입력</option>
+</select>
+<input type="text" name="email3" id="email3" class="inputBox">
+</div>
+<div>
+<label>커서가 들어왔을 때</label> <input type="text" name="nameIn" id="nameIn" class="inputBox">	
+<label>커서가 나갔을 때</label> <input type="text" name="nameOut" id="nameOut" class="inputBox">	
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+#div { width: 300px; height: 150px; background-color:#e1ecf3; border: 1px dotted #333}
+</style>
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#btn").click(function() {
+		let output=""
+		output += "넓이 :" + $('#div').css("width") +"<br/>"; // 아이디가 div인 태그에 css속성 중 width값을 얻는다.
+		output += "높이 :" + $('#div').css("height") +"<br/>"; // 아이디가 div인 태그에 css속성 중 width값을 얻는다.
+		output += "바닥색 :" + $('#div').css("background-color") +"<br/>"; // 아이디가 div인 태그에 css속성 중 width값을 얻는다.
+		output += "선 :" + $('#div').css("border") +"<br/>"; // 아이디가 div인 태그에 css속성 중 width값을 얻는다.
+		
+		$("#output").html(output);
+		
+	}); // click
+	
+	$("#btn1").click(function(){
+		//아이디가 div2인 태그에 CSS속성 설정
+		$("#div2").css("border","2px solid #FF0000");
+		$("#div2").css("width","50%");
+		$("#div2").css("height","200px");
+		$("#div2").css("background","#FFFFFF url(../common/images/header_background.png)");
+	}); // click
+	
+}); //ready
+
+</script>
+</head>
+<body>
+<div id="div"></div>
+<input type="button" value="속성값얻기" id="btn" class="btn"/>
+<input type="button" value="속성값설정" id="btn1" class="btn"/>
+<div id="output"></div>
+
+<div id="div2"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+.text{font-weight: bold; font-size: 20px; color: #e57291;}
+.newInput{font-weight: bold; font-size: 20px;}
+</style>
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#btn").click(function() {
+		$(".text").removeClass("text");
+	})
+	
+	$("#btn1").click(function() {
+		//$("#id").removeClass("newInput"); // 기존의 클래스를삭제하고
+		//$("#id").addClass("newInput"); // 기존의 클래스를삭제하고
+		$("#id").removeClass("newInput").addClass("newInput");
+	})
+	
+})
+
+</script>
+</head>
+<body>
+<input type="button" value="class제거" class="btn" id ="btn">
+<input type="button" value="class추가" class="btn" id ="btn1">
+<ul>
+	<li class="text">봄 에는 벚꽃</li>
+	<li> 여름에는 여름</li>
+	<li>가을에는 달</li>
+	<li class="text">겨울 에는 눈</li>
+</ul>
+<label>아이디</label> <input type="text" name="id" id="id" class="inputBox"/>
+</body>
+</html>

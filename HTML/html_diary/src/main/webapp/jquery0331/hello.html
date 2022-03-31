@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<!-- jQuery CDN -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+// JavaScript 코드와, jQuery 코드 사용 가능
+window.onload=function() {
+	document.getElementById("btn").addEventListener("click",jsClick);
+	
+	$("#btn1").click(function () {
+		jqueryClick();
+	});
+} // onload
+
+function jsClick() {
+
+	alert("JS 클릭");
+	
+} // jsClick
+
+function jqueryClick() {
+	
+		alert("jQuery Click");
+	
+}
+</script>
+</head>
+<body>
+<input type="button" value = "JavaScript클릭" id="btn" class="btn"/>
+<input type="button" value = "jQuery클릭" id="btn1" class="btn"/>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(window).load(function() { // 로딩ㅇ 속도가 느리기에 잘 사용하지 않는다.
+	alert("window load");
+}) // load
+
+
+//$(document).ready(function() {
+$(function() { // <body>가 먼저 로딩 된 후 코드가 실행되어야 <body>안에 있는 태그에 접근이 가능.
+	alert("document ready")
+}); //ready
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
