@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+#imgWrap{ height : 260px; }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#slideUp").click(function() {
+		$("#img").slideUp(1000,function() {
+			alert("완료 후 동작")
+		});
+	}); // click
+	$("#slideDown").click(function() {
+		$("#img").slideDown(1000,function() {
+			alert("완료 후 동작")
+		});
+	}); // click
+	$("#slideToggle").click(function() {
+		$("#img").slideToggle(1000,function() {
+			alert("완료 후 동작")
+		});
+	}); // click
+}); // ready
+</script>
+</head>
+<body>
+<div id="imgWrap">
+	<img src="../js0324/images/blood_a.PNG" id="img"/>
+</div>
+<input type="button" value="펼쳐보이기" class="btn" id="slideDown"/>
+<input type="button" value="말아올리기" class="btn" id="slideUp"/>
+<input type="button" value="반전" class="btn" id="slideToggle"/>
+</body>
+</html>

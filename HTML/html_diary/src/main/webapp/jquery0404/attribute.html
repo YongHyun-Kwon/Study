@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#btnAttr").click(function() {
+		//$("#txt").attr("value","클릭되었습니다.");
+		//$("#txt").attr("class","inputBox");
+		$("#txt").prop("value","클릭되었습니다.");
+		$("#txt").prop("class","inputBox");
+	}); // click
+	
+	$("#btnM").click(function() {
+		//$("#m").attr("checked",true);
+		$("#m").prop("checked",true);
+	}); // click
+	$("#btnF").click(function() {
+		//$("#f").attr("checked",true);
+		$("#f").prop("checked",true);
+	}); // click
+	
+	$("#ssn1").keyup(function(evt) {
+		
+		if($("#ssn1").val().length == 6){
+			$("#ssn2").focus();
+		} // end if
+	}) // click
+	
+	$("#ssn2").focusout(function(evt) {
+		if($("#ssn2").val().length != 7){
+			alert("주민번호 뒷자리의 입력값을 확인하세요.")
+			return;
+		} // end if
+		
+		let genderFlag = $("#ssn2").val().charAt(0);
+		var genderId = genderFlag %2==0?"#f":"#m";
+		
+		$(genderId).prop("checked",true);
+		
+	}) // click
+	
+}) // ready
+</script>
+</head>
+<body>
+<input type="button" value="속성추가" class="btn" id="btnAttr"/><br/>
+<input type="text" name="text" id="txt"/><br/>
+
+<input type="button" value="남자설정" class="btn" id="btnM"/><br/>
+<input type="button" value="여자설정" class="btn" id="btnF"/><br/>
+
+<label>주민번호</label>
+<input type="text" name="ssn1" id="ssn1" maxlength="6" style="width: 60px" class="inputBox"/>-
+<input type="password" name="ssn2" id="ssn2" maxlength="7"  style="width: 70px;" class="inputBox"><br/>
+<label>성별선택</label><br/>
+<input type="radio" name="gender" id="m"/>남자<br/>
+<input type="radio" name="gender" id="f"/>여자<br/>
+
+</body>
+</html>
