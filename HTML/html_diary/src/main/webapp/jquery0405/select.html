@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#getValue").click(function() {
+		
+		$("#output").html("<strong>" + $("#subject").val() + "</strong>") // 입력된 값의 태그를 해석하여 selector에 해당하는 위치에 출력
+		//$("#output").text("<strong>" + $("#subject").val() + "</strong>") // 입력된 값의 태그를 해석하지 않는다. selector에 해당하는 위치에 출력
+		// 입력된 값에 태그가 존재하면 그대로 보여준다.
+	}) // click
+	
+	$("#setValue").click(function() {
+		// length 접근한 태그의 개수를 얻을 수 있다.
+		// alert($("#subject option").length);
+		//$("#subject option:eq(2)").prop("selected",true);
+		
+		var num = parseInt(Math.random()*$("#subject option").length);
+		$("#subject option:eq("+ num + ")").prop("selected",true);
+	}) // click
+}); // ready
+
+</script>
+</head>
+<body>
+<input type="button" class="btn" id="getValue" value="깂얻기"/>
+<input type="button" class="btn" id="setValue" value="깂설정"/><br/>
+
+<select id="subject">
+	<option value="java">Java</option>
+	<option value="Oracle">Oracle</option>
+	<option value="JDBC">JDBC</option>
+	<option value="HTML">HTML</option>
+	<option value="CSS">CSS</option>
+</select>
+<div id="output"></div>
+</body>
+</html>

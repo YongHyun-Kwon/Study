@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- Coin Slider -->
+<script type="text/javascript" src="http://localhost/html_prj/common/js/coin_slider/coin-slider.min.js"></script>
+<link rel="stylesheet" href="http://localhost/html_prj/common/js/coin_slider/coin-slider-styles.css" type="text/css" />
+
+<script type="text/javascript">
+$(function() {
+    $('#coin-slider').coinslider({
+    	width: 700,
+    	height: 400,
+    	delay: 500,
+    	opacity: 0.9,
+    	effect: 'rain',
+    });
+});
+</script>
+</head>
+<body>
+<div id='coin-slider' style="margin: 0px auto">
+    <a href="http://daum.net" target="_blank">
+        <img src='images/city_1.png' >
+        <span>
+            서울의 야경
+        </span>
+    </a>
+    <a href="#void" target="_blank">
+        <img src='images/city_2.png' >
+        <span>
+            마계 인천의 야경
+        </span>
+    </a>
+    <a href="#void" target="_blank">
+        <img src='images/city_3.png' >
+        <span>
+            대구의 야경
+        </span>
+    </a>
+    <a href="img01_url" target="_blank">
+        <img src='images/city_4.png' >
+        <span>
+            강원도의 야경
+        </span>
+    </a>
+</div>
+
+</body>
+</html>

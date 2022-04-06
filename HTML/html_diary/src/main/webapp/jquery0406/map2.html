@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=27e27c4311448ceaf28d75f6ed8073bb"></script>
+<script>
+$(function(){
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(37.499327, 127.033214), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+        
+        
+    };
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+//마커가 표시될 위치입니다 
+var markerPosition  = new kakao.maps.LatLng(37.499327, 127.033214); 
+
+//마커를 생성합니다
+var marker = new kakao.maps.Marker({
+ position: markerPosition
+});
+
+//마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);
+
+var iwContent = '<div style="padding:5px;">쌍용교육센터 <br><a href="https://sist.co.kr" style="color:blue" target="_blank">이동</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+iwPosition = new kakao.maps.LatLng(37.499327, 127.033214); //인포윈도우 표시 위치입니다
+
+//인포윈도우를 생성합니다
+var infowindow = new kakao.maps.InfoWindow({
+position : iwPosition, 
+content : iwContent 
+});
+
+//마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+infowindow.open(map, marker); 
+
+
+});
+</script>
+</head>
+<body>
+<div id="map" style="width:70%;height:700px;"></div>
+</body>
+</html>

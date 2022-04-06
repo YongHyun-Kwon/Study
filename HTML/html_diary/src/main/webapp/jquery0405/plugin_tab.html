@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here.</title>
+<!-- 공통CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/common/css/main_20220321.css"/>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- 제공 js와 css 연결 -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script type="text/javascript">
+// 기능 사용
+  $( function() {
+    $( "#tabs" ).tabs();
+  } );
+</script>
+</head>
+<body>
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">1조</a></li>
+    <li><a href="#tabs-2">2조</a></li>
+    <li><a href="#tabs-3">3조</a></li>
+  </ul>
+  <div id="tabs-1">
+  	<p> 박설진 강현모 서지숙 최연이 강명준 </p>
+  	<p> 크몽을 벤치마킹한 용역제공 프로젝트 </p>
+  	<p> 자바 개발자 2명 타세요.</p>
+  </div>
+  <div id="tabs-2">
+  	<p>김예진 권용현 서희수 신유철 정인선</p>
+  	<p>물물교환</p>
+  </div>
+  <div id="tabs-3">
+  	<p>전민정	황성준 김진영 정시헌 장정우	강산</p>
+  	<p>미술관 전시 예약</p>
+  </div>
+</div>
+</body>
+</html>
