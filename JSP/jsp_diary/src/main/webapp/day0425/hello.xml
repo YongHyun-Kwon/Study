@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- XML선언부는 가장 처음에 나와야한다.
+	선언부의 속성은 version, encoding, standalone 순서대로 나와야한다.
+ -->
+<root><!-- 최상위 부모노드 -->
+<msg>안녕하세요?</msg><!-- 자식노드 : 같은 노드의 반복여부와 상관없이 등장할 수 있다. -->
+<msg>안녕하세요?</msg><!-- 자식노드 -->
+<message>안녕하세요?</message><!-- 자식노드 -->
+<message>4+25</message><!-- 연산의 기능이 없다. -->
+<name family_name="정">인선</name><!-- 속성을 가질 수 있다. -->
+<!-- <message>오늘은 월요일 입니다.</Message> --><!-- 대소문자를 가린다. -->
+<!-- <message> --><!-- 노드는 반드시 짝으로 이우러져야한다. -->
+<message/>
+</root>

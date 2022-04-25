@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 데이터의 구조를 생각하여 XML을 작성. 사람의 정보는 이름, 나이, 주소를 가진다. -->
+<persons>
+	<person>
+		<name>황성준</name>
+		<age>25</age>
+		<addr>서울시 강남구 역삼동</addr>
+	</person>
+	<person>
+		<name>신유철</name>
+		<age>27</age>
+		<addr>서울시 강북구 수유동</addr>
+	</person>
+	<person>
+	<!-- Well-formed XML은 작성규칙만 준수하여 만들면 된다.
+	태그명이 같더라도 이전태그와는 관계가 없다 -->
+		<addr>서울시 영등포구 양평동 </addr>
+		<name>강산</name>
+		<age>22</age>
+		<addr>경기도 부천시 </addr>
+		<email>test@test.com</email>
+	</person>
+</persons>
