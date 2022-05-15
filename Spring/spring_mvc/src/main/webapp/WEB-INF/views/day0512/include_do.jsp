@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"
+    info="do include"
+    %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,9 +27,16 @@ $(function() {
 </script>
 </head>
 <body>
-views/day0510/sub_result.jsp<br/>
-<a href="index.html">메뉴</a><br/>
-<a href="index.do">메뉴</a><br/>
+외부페이지
+<div>
+<%-- 지시자 : <%@ include file="/day0512/use_model.do" %><br/>
+include directive는 do를 include 할 수 없다.
+ --%>
 
+액션태그 : <jsp:include page="/day0512/use_model.do"/>
+
+JSTL : <c:import url="/day0512/use_model.do"/>
+</div>
+외부페이지
 </body>
 </html>

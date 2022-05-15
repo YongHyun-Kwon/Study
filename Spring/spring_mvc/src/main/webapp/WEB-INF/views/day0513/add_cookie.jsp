@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    info="쿠키 심기 결과"
+    %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -25,9 +27,30 @@ $(function() {
 </script>
 </head>
 <body>
-views/day0510/sub_result.jsp<br/>
-<a href="index.html">메뉴</a><br/>
-<a href="index.do">메뉴</a><br/>
+<%
+// 쿠키 읽기
+Cookie[] cookies = request.getCookies();
 
+if( cookies != null ) {
+	
+	String name = "";
+	String value = "";
+	
+	for(Cookie cookie : cookies){
+		name = cookie.getName();
+		value = cookie.getValue();	
+		
+		%>
+		쿠키명 : <%= name %>, 
+		쿠키 값 : <%= value %><br/>
+		<%
+		
+	}// end for
+	
+} else {
+	%>쿠키없음<%
+}//end else
+
+%>
 </body>
 </html>

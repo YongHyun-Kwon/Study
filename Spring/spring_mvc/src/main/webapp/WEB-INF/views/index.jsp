@@ -20,8 +20,27 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(function() {
-	
+	$("#btnPost").click(function() {
+		$("#frm").submit();
+	})
 }); // ready
+
+function sendFrm( flag ){
+	// <form>에 action을 변경할 수 있다.
+	// document.폼이름.action="GET|POST"
+	
+	
+	var method="GET";
+	if( flag == 1 ){
+		method="POST";
+	}// end if
+	
+	document.frm.method=method;
+	// 설정된 전송방식을 사용하여 back-end로 요청
+	document.frm.submit();
+	
+
+}
 </script>
 </head>
 <body>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    info="session설정된 값 얻기"
+    %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -25,9 +27,12 @@ $(function() {
 </script>
 </head>
 <body>
-views/day0510/sub_result.jsp<br/>
-<a href="index.html">메뉴</a><br/>
-<a href="index.do">메뉴</a><br/>
-
+<marquee scrollamount="20"><c:out value="${ sessionScope.name }"/></marquee>
+<br/>
+<select class="inputBox">
+<c:forEach var="data" items="${ data }">
+<option value="${ data }"><c:out value="${ data }"/></option>
+</c:forEach>
+</select>
 </body>
 </html>

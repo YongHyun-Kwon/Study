@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- 공통CSS -->
-<link rel="stylesheet" type="text/css" href="http://localhost/spring_mvc/common/css/main_20220321.css"/>
+<!-- 공통 CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost/spring_mvc/common/css/main_20220321.css">
 <style type="text/css">
 
 </style>
@@ -18,14 +18,25 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
 <script type="text/javascript">
-$(function() {
-	
-}); // ready
+$(function(){
+   
+});//ready
 </script>
 </head>
 <body>
-views/day0510/sub_result.jsp<br/>
+<span style="font-size: 20px"><c:out value="${ msg }"/></span>
+이름 : <strong><c:out value="${ param.name }"/></strong><br/>
+나이 : <strong><c:out value="${ param.age }"/></strong><br/>
+<%-- 언어 : <strong><c:out value="${ param.lang }"/></strong><br/> --%>
+언어 :
+ <c:if test="${ empty param.lang }">선택언어 없음</c:if>
+ <c:forEach var="lang" items="${ paramValues.lang }">
+ <c:out value="${ lang }"/>
+ </c:forEach>
+ <br/>
+
 <a href="index.html">메뉴</a><br/>
 <a href="index.do">메뉴</a><br/>
 

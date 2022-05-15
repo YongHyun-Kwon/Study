@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"
+    info="공통 디자인, 코드 include"
+    %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,9 +27,18 @@ $(function() {
 </script>
 </head>
 <body>
-views/day0510/sub_result.jsp<br/>
-<a href="index.html">메뉴</a><br/>
-<a href="index.do">메뉴</a><br/>
+외부페이지
+<div>
+지시자 : <%@ include file="/WEB-INF/views/include/include_a.jsp" %><br/>
+지시자 : <%@ include file="/include/include_b.jsp" %><br/>
 
+액션태그 : <jsp:include page="/WEB-INF/views/include/include_a.jsp"/>
+액션태그 : <jsp:include page="/include/include_b.jsp"/>
+
+JSTL : <c:import url="/WEB-INF/views/include/include_a.jsp"/>
+JSTL : <c:import url="/include/include_b.jsp"/>
+
+</div>
+외부페이지
 </body>
 </html>

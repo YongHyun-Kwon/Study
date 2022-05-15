@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    info="request객체에 저장된 값 받아 출력."
+    %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -25,9 +27,14 @@ $(function() {
 </script>
 </head>
 <body>
-views/day0510/sub_result.jsp<br/>
-<a href="index.html">메뉴</a><br/>
-<a href="index.do">메뉴</a><br/>
-
+<div>
+생산일 : <c:out value="${ requestScope.search_date }"/>( <c:out value="${ user_name }"/>)<br/>
+</div>
+<div>
+<c:forEach var="data" items="${ search_data }">
+<input type="text" name="data" value="${ data }" class="inputBox"/><br/>
+</c:forEach>
+</div>
+<a href="../index.do">메인</a>
 </body>
 </html>

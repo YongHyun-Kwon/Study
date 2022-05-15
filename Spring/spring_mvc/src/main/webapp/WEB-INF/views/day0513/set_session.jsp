@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    info="세션에 설정된 값 확인"
+    %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -25,9 +27,18 @@ $(function() {
 </script>
 </head>
 <body>
-views/day0510/sub_result.jsp<br/>
-<a href="index.html">메뉴</a><br/>
-<a href="index.do">메뉴</a><br/>
+<img src="images/daum_logo.png"/>
+<div>
+request name : <%= request.getAttribute("sesName") %>( <c:out value="${ requestScope.sesName }"/> )<br/>
+request age : <%= request.getAttribute("sesAge") %>( <c:out value="${ requestScope.sesAge }"/> )<br/>
+<!-- // Model의 값은 request에 설정되어 있다. @SessionAttributes에 같은 이름이라면 
+session 에서 받을 수 있다. -->
+session name : <%= session.getAttribute("sesName") %>( <c:out value="${ sessionScope.sesName }"/> )<br/>
+session age : <%= session.getAttribute("sesAge") %>( <c:out value="${ sessionScope.sesAge }"/> )<br/>
 
+<a href="../index.do">메인</a>
+
+
+</div>
 </body>
 </html>

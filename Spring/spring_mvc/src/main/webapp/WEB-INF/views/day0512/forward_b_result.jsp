@@ -25,9 +25,10 @@ $(function() {
 </script>
 </head>
 <body>
-views/day0510/sub_result.jsp<br/>
-<a href="index.html">메뉴</a><br/>
-<a href="index.do">메뉴</a><br/>
+
+forward_b.do에서 응답되는 페이지<br/>
+<a href="http://localhost/spring_mvc/index.html">메뉴</a><br/>
+<a href="http://localhost/spring_mvc/index.do">메뉴</a><br/>
 
 </body>
 </html>
