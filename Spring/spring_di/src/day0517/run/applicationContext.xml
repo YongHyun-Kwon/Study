@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+      http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+<!-- 의존성 주입할 객체 선언 -->
+<bean id="md" class="day0517.dao.MysqlDAO" scope="singleton"/>
+<bean id="od" class="day0517.dao.OracleDAO" scope="prototype"/>
+
+<!-- 의존성 주입받을 객체 선언 -->
+<bean id="si" class="day0517.service.ServiceImpl">
+<constructor-arg ref="od"/>
+</bean>
+
+</beans>
