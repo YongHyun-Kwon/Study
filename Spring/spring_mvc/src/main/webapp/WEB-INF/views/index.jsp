@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <!-- 공통CSS -->
-<link rel="stylesheet" type="text/css" href="http://localhost/spring_mvc/common/css/main_20220321.css"/>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.135/spring_mvc/common/css/main_20220321.css"/>
 <style type="text/css">
 
 </style>
@@ -29,7 +28,6 @@ function sendFrm( flag ){
 	// <form>에 action을 변경할 수 있다.
 	// document.폼이름.action="GET|POST"
 	
-	
 	var method="GET";
 	if( flag == 1 ){
 		method="POST";
@@ -38,9 +36,67 @@ function sendFrm( flag ){
 	document.frm.method=method;
 	// 설정된 전송방식을 사용하여 back-end로 요청
 	document.frm.submit();
-	
 
 }
+
+function sendReq() {
+	
+	$.ajax({
+		url:"day0513/ajax.do",
+		type:"get",
+		dataType:"json",
+		error:function(xhr){
+			alert(xhr.status + "/" + xhr.statusText);
+		},
+		success:function(json){
+			
+			//alert(json.pubDate);
+			
+			let output = "";
+			output += "생산일 : " + json.pubDate + "<br/>"
+			output += "데이터 건 수 : " + json.lang + "<br/>"
+			for(var i = 0; i < json.data.length; i++){
+				output += " : " + json.data[i].name + "<br/>"
+			}
+			
+			$("#view").html(output);
+		},
+		
+	});// ajax
+	
+}// sendReq
+
+function sendReq1() {
+	
+	$.ajax({
+		url:"day0516/ajax.do",
+		type:"get",
+		dataType:"json",
+		async: false,
+		error:function(xhr){
+			alert(xhr.status + "/" + xhr.statusText);
+		},
+		success:function(json){
+			
+			//alert(json.pubDate);
+			
+			let output = "@ResponseBody 사용<br/>";
+			output += "생산일 : " + json.pubDate + "<br/>"
+			output += "데이터 건 수 : " + json.lang + "<br/>"
+			output += "<ul>"
+			for(var i = 0; i < json.data.length; i++){
+				output += "<li>" + json.data[i].name + "</li>"
+			}// end for
+			
+			output +="</ul>"
+			
+			$("#view").html(output);
+		},
+		
+	});// ajax
+	
+}// sendReq1
+
 </script>
 </head>
 <body>
@@ -99,11 +155,100 @@ function sendFrm( flag ){
 		<input type="button" value="POST 전송" onclick="sendFrm(1)" class="btn btn-info"/>
 		</form>	
 	</li>
-	<li>forward 이동</li>
-	<li>redirect 이동</li>
-	<li>HttpSession 사용</li>
-	<li>Cookie 사용</li>
-	<li>AJAX</li>
+	<li>view로 데이터 전송(HttpServletRequest사용)
+	  <a href="day0512/use_request.do">요청</a>
+	</li>
+	<li>
+		view로 데이터 전송(Model사용)
+		<a href="day0512/use_model.do">요청</a>
+	</li>
+	<li>
+		view로 데이터 전송(ModelAndView사용)
+		<a href="day0512/use_model_and_view.do">요청</a>
+	</li>
+	<li>
+		redirect 이동
+		<a href="day0512/do_move.do">do요청(Controller)</a>
+	</li>
+	<li>
+		redirect 이동
+		<a href="day0512/jsp_move.do">jsp요청(직접요청)</a>
+	</li>
+	<li>
+		forward 이동
+		<a href="day0512/forward_a.do">do요청(Controller 직접요청)</a>
+	</li>
+	<li>
+		forward 이동
+		<a href="day0512/forward_b.do">do요청</a>
+	</li>
+	
+	<li>
+		include 이동
+		<a href="day0512/include_views.do">WEB-INF/views</a>
+	</li>
+
+	<li>
+		include 이동
+		<a href="day0512/include_webapp.do">do</a>
+	</li>
+	
+	<li>
+		HttpSession 사용
+		<a href="day0512/session.do">do</a>
+	</li>
+	
+	<li>
+		HttpSession 사용
+		<a href="day0513/set_session.do">@SessionAttribute 값 설정</a>
+	</li>
+	
+	<li>
+		HttpSession 사용
+		<a href="day0513/get_session.do">@SessionAttribute 값 얻기</a>
+	</li>
+	
+	<li>
+		HttpSession 사용
+		<a href="day0513/remove_session.do">@SessionAttribute 삭제</a>
+	</li>
+	<li>
+		Cookie 사용
+		<a href="day0513/add_cookie.do">쿠키 심기</a>
+	</li>
+	
+	<li>
+		Cookie 사용
+		<a href="day0513/get_cookie.do">쿠키 읽기</a>
+	</li>
+
+	<li>
+		Cookie 사용
+		<a href="day0513/remove_cookie.do">쿠키 삭제</a>
+	</li>
+	<li>
+		AJAX
+		<a href="#void" onclick="sendReq()">요청</a>
+		<div id="view"></div>
+	</li>
+	<li>
+		AJAX @ResponseBody 사용
+		<a href="#void" onclick="sendReq1()">요청</a>
+		<div id="view1"></div>
+	</li>
+	<li>
+		@ExceptionHandler를 사용한 예외처리
+		<a href="day0516/use_exception.do">요청</a>
+	</li>
+	<li>
+		<a href="day0518/di.do">DI도입</a>
+	</li>
+	<li>
+		<a href="day0518/di2.do">DI도입(annotation)</a>
+	</li>
+	<li>
+		<a href="mybatis/mybatis_index.do">MyBatis 사용</a>
+	</li>
 </ul>
 </div>
 </body>
