@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.kyh.dao.examMapper">
+	<insert id="insertMyTab" parameterType="kr.co.kyh.vo.MyTabVO">
+
+		insert into my_tab(id,name,email,input_date,age)
+		values(#{id}, #{name}, #{email}, sysdate, #{age})
+	</insert>
+	
+	<!-- 아이디와 이메일을 가지고 이름과 나이를 변경 -->
+	<update id="updateMyTab" parameterType="kr.co.kyh.vo.MyTabVO">
+	<![CDATA[
+		update my_tab
+		set	   name=#{name}, age=#{age}
+		where  id=#{id} and email=#{email}
+	]]>
+	</update>
+	
+	<!-- 아이디를 입력받아 삭제. : 값이 하나인 경우 parameterType = "단일형"을 설정할 수 있다. -->
+	<delete id="deleteMyTab" parameterType="String">
+		delete from my_tab where id=#{id}
+	</delete>
+	<!-- 한 행 조회 : my_tab 테이블에서 아이디에 해당하는 이름, 이메일, 입력일, 나이를 조회 -->
+	<select id="selectMyTab" resultType="kr.co.kyh.domain.MyTabDomain"
+		parameterType="kr.co.kyh.vo.MyTabVO">
+	
+	select name, email, to_char(input_date, 'MM-dd-yyyy') input_date, age
+	from   my_tab
+	where  id=#{ id } and name=#{ name }
+	
+	</select>
+	
+	<!-- cp_emp4테이블에서 입력되는 job과 일치하는 사원번호, 사원명, 직무, 연봉, 보너스를 조회 -->
+	<select id="selectCpEmp4" resultType="kr.co.kyh.domain.CpEmp4Domain" parameterType="String">
+		select empno, ename, job, sal, comm
+		from   cp_emp4
+		where  job=#{ job }
+	</select>
+	
+</mapper>
