@@ -12,22 +12,22 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
  * MyBatis Framwork를 생성하고 MyBatis Handler를 반환
  * @author user
  */
-public class MyBatisFramwork {
+public class MyBatisFramework {
 	
-	private static MyBatisFramwork mbf;
+	private static MyBatisFramework mbf;
 	private static SqlSessionFactory ssf;
 	
-	private MyBatisFramwork() {
+	private MyBatisFramework() {
 		
 		org.apache.ibatis.logging.LogFactory.useLog4JLogging();
 		
 	}// MyBatisFramwork
 	
-	public static MyBatisFramwork getInstance() {
+	public static MyBatisFramework getInstance() {
 		
 		if(mbf == null) {
 			
-			mbf = new MyBatisFramwork();
+			mbf = new MyBatisFramework();
 			
 		}// end if 
 		

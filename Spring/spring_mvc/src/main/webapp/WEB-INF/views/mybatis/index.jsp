@@ -28,21 +28,27 @@ $(function() {
 </head>
 <body>
 <ul>
-	<li><a href="day0523/scsrFrm.do">컴럼하나 행 하나 조회</a></li>
-	<li><a href="#void">컴럼하나 행 여러행 조회</a></li>
-	<li><a href="#void">컴럼여러개 행 하나 조회</a></li>
-	<li><a href="#void">컴럼여러개 여러행 조회</a></li>
-	<li><a href="#void"> < 조회 </a></li>
-	<li><a href="#void"> > 조회 </a></li>
-	<li><a href="#void"> like </a></li>
-	<li><a href="#void"> subquery </a></li>
-	<li><a href="#void"> union </a></li>
-	<li><a href="#void"> join </a></li>
-	<li><a href="#void"> subquery + join </a></li>
-	<li><a href="#void"> 테이블명동적 </a></li>
-	<li><a href="#void"> dynamic query(if) </a></li>
-	<li><a href="#void"> dynamic query(choose) </a></li>
-	<li><a href="#void"> dynamic query(foreach) </a></li>
+	<li><a href="day0523/scsrFrm.do">컬럼하나 행 하나 조회</a></li>
+	<li><a href="day0524/scmrFrmProcess.do">컬럼하나 행 여러행 조회</a></li>
+	<li><a href="day0524/mcsrFrmProcess.do">컬럼여러개 행 하나 조회</a></li>
+	<li><a href="day0524/mcmrFrmProcess.do">컬럼여러개 여러행 조회</a></li>
+	<li><a href="day0524/ltFrmProcess.do"> &lt; < 조회 </a></li>
+	<li><a href="day0525/gtFrmProcess.do"> &gt; > 조회 </a></li>
+	<li><a href="day0525/likeFrmProcess.do"> like </a></li>
+	<li><a href="day0525/subquery.do"> subquery </a></li>
+	<li><a href="day0525/union.do"> union </a></li>
+	<li><a href="day0526/join.do"> join </a></li>
+	<li><a href="day0526/join.do"> subquery + join </a></li>
+	<li><a href="day0526/dynamicTab.do"> 테이블명 동적 </a></li>
+	<li><a href="day0526/dynamicIf.do"> dynamic query(if) </a></li>
+	<li><a href="day0527/dynamicChoose.do"> dynamic query(choose) </a></li>
+	<li><a href="day0527/dynamicTrim.do"> dynamic query(trim) </a></li>
+	<li><a href="day0527/dynamicSet.do"> dynamic query(set) </a></li>
+	<li><a href="day0530/dynamicForeach.do"> dynamic query(foreach) </a></li>
+	<li><a href="day0530/insertProc.do"> procedure call(insert) </a></li>
+	<li><a href="day0530/modifyProc.do"> procedure call(update) </a></li>
+	<li><a href="day0530/removeProc.do"> procedure call(delete) </a></li>
+	<li><a href="#void"> procedure call(select) </a></li>
 </ul>
 </body>
 </html>

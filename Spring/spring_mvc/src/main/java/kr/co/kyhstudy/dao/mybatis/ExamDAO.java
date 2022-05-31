@@ -17,7 +17,7 @@ public class ExamDAO {
 		
 		String dname = "";
 		
-		SqlSession ss = MyBatisFramwork.getInstance().getMyBatisHandler();
+		SqlSession ss = MyBatisFramework.getInstance().getMyBatisHandler();
 		
 		dname = ss.selectOne("kr.co.sist.dao.scsr", deptno);
 		

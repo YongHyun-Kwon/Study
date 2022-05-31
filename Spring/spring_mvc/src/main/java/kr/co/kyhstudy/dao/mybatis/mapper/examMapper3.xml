@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.exam3">
+
+ <!-- >의 사용
+ 	emp 테이블에서 입력된 연봉이하 연봉을 수령에 해당하는 사원들의
+ 	사원번호, 사원명, 입사일, 부서번호를 조회
+ 	List<EmpDomain> ed = ss.selectList("greaterThan", 4000); -->
+ <select id="greaterThan" resultType="ed" parameterType="Integer">
+ 	select  empno, ename, sal, hiredate, deptno
+  	from    emp
+ 	<![CDATA[
+ 		where sal > #{ sal }
+ 	]]>
+ 	order by sal desc
+ </select>
+ 
+ <!-- like
+ 	car model 테이블에서 입력된 옵션이 있는 차량의 모델명, 년식, 가격, 옵션, 입력일을 조회
+  -->
+ <select id="like" resultType="md" parameterType="String">
+ select model, car_year, price, car_option, to_char(hiredate, 'yyyy-mm-dd') hiredate, car_img
+ from   car_model
+ where  car_option like '%' || #{ car_option } || '%'
+ </select>
+ 
+ <!-- car_model 테이블에 전체 차량 건수 조회 -->
+ <select id="carCnt" resultType="int" parameterType="boardVO">
+ select count(*) cnt
+ from car_model
+ <where>
+ 	<if test="keyword != null and keyword != ''">
+ 		${ field } like '%'||#{ keyword }||'%'
+ 	</if>
+ </where>
+ </select>
+ 
+ <!-- car_model 테이블에서 입력된 시작번호화 끝번호 사이에 해당하는 차량을 가장마지막에 입력된
+ 	차량순서로 조회 
+  조회컬럼 차량의 이미지, 모델명, 년식, 가격, 옵션, 입력일을 조회-->
+  <!-- 컬럼과 setter 미리 매핑 -->
+  <resultMap type="md" id="mdResult">
+  	<result column="MODEL" property="model"/>
+  	<result column="CAR_YEAR" property="car_year"/>
+  	<result column="PRICE" property="price"/>
+  	<result column="CAR_OPTION" property="car_option"/>
+  	<result column="HIREDATE" property="hiredate"/>
+  	<result column="CAR_IMG" property="car_img"/>
+  </resultMap>
+  <select id="subquery" resultMap="mdResult" parameterType="boardVO">
+  select  model, car_year, price, car_option, to_char(hiredate, 'yyyy-mm-dd') hiredate, car_img
+	from (select row_number() over(order by hiredate desc) rnum, model, car_year, price, car_option,hiredate, car_img
+	from car_model
+		<where>
+		<if test="keyword != null and keyword !=''">
+			${ field } like '%'||#{ keyword }||'%'
+		</if>
+		</where>
+	 )
+	where rnum between #{ startNum } and #{ endNum }
+  
+  </select>
+
+	<select id="union" resultType="ed">
+	select empno,ename,job
+	from cp_emp3
+	union
+	select empno,ename,job
+	from cp_emp4
+	</select>
+
+</mapper>
